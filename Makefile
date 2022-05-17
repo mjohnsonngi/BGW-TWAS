@@ -45,7 +45,7 @@ LIBS = -lgsl -lgslcblas -pthread -lz -lm ./libStatGen/libStatGen.a
 # Detailed library paths, D for dynamic and S for static
 LIBS_LNX_D_LAPACK = -llapack
 LIBS_MAC_D_LAPACK = -framework Veclib
-LIBS_LNX_S_LAPACK = /usr/lib64/liblapacke.so -lgfortran /usr/lib64/atlas/libsatlas.so.3 /usr/lib64/libblas.so -Wl,--allow-multiple-definition 
+LIBS_LNX_S_LAPACK = /usr/lib64/liblapacke.so -lgfortran /usr/lib64/libsatlas.so.3 /usr/lib64/libblas.so -Wl,--allow-multiple-definition 
 
 #LIBS_LNX_S_LAPACK = /usr/lib/lapack/liblapack.a -lgfortran  /usr/lib/atlas-base/libatlas.a /usr/lib/libblas/libblas.a -Wl,--allow-multiple-definition 
 
