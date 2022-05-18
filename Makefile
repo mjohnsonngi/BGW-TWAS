@@ -36,7 +36,7 @@ CPP = g++
 ## Will need the bfGWAS_SS/libStateGen/MemoryAllocators.h and bfGWAS_SS/libStateGen/MemoryAllocators.cpp from "https://github.com/yjingj/bfGWAS_SS.git"; the ones from original libStatGen.git will cause error
 ## C++ libraries used in this tool: zlib, gsl, eigen3, lapack, atlas, blas; Please add -I[path to libraries] accordingly
 
-CPPFLAGS = -ggdb -Wall -O3 -I/usr/lib64 -I./libStatGen/include/ -I/usr/local/lib/gsl/include/ -I/usr/local/lib/zlib/include -I/usr/local/lib/  -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS #-pg
+CPPFLAGS = -ggdb -Wall -O3 -I/usr/lib/x86_64-linux-gnu/ -I/usr/lib/x86_64-linux-gnu/openblas-pthread/ -I./libStatGen/include/ -I/usr/local/lib/gsl/include/ -I/usr/local/lib/zlib/include -I/usr/local/lib/  -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS #-pg
 
 
 ## Include correct libraries of gsl, blas, lapack, atlas, libStatGen
@@ -45,7 +45,7 @@ LIBS = -lgsl -lgslcblas -pthread -lz -lm ./libStatGen/libStatGen.a
 # Detailed library paths, D for dynamic and S for static
 LIBS_LNX_D_LAPACK = -llapack
 LIBS_MAC_D_LAPACK = -framework Veclib
-LIBS_LNX_S_LAPACK = /usr/lib64/liblapacke.so -lgfortran -Wl,--allow-multiple-definition
+LIBS_LNX_S_LAPACK = -lgfortran -Wl,--allow-multiple-definition
 
 #LIBS_LNX_S_LAPACK = /usr/lib64/liblapacke.so -lgfortran /usr/lib64/libsatlas.so.3 /usr/lib64/libblas.so -Wl,--allow-multiple-definition
 #LIBS_LNX_S_LAPACK = /usr/lib/lapack/liblapack.a -lgfortran  /usr/lib/atlas-base/libatlas.a /usr/lib/libblas/libblas.a -Wl,--allow-multiple-definition 
